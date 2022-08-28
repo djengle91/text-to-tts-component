@@ -4,7 +4,8 @@
   "description": "Generates a custom component image for Tabletop Simulator from text string for simple prototyping",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.j"
   },
   "author": "Daniel Engle <djengle91@gmail.com> (https://github.com/djengle91)",
   "license": "ISC",
