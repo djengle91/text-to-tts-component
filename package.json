@@ -1,0 +1,15 @@
+{
+  "name": "text-to-tts-component",
+  "version": "0.0.1",
+  "description": "Generates a custom component image for Tabletop Simulator from text string for simple prototyping",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Engle <djengle91@gmail.com> (https://github.com/djengle91)",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.9.3",
+    "express": "^4.18.1"
+  }
+}
