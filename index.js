@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
     bgColor: req.query.bc || req.query.bgColor || "white",
     // can use any string useable on font-size css
     fontSize: req.query.f || req.query.fontSize || "16px",
+    // will be put above regular text and bolded
+    title: req.query.t || req.query.title || "",
+    // can use any string useable on font-size css
+    titleSize: req.query.ts || req.query.titleSize || "20px",
   };
 
   res.writeHead(200, {
@@ -41,6 +45,11 @@ const generateComponent = (text, options) => {
   context.font = `${options.fontSize} sans-serif`;
   context.textAlign = "center";
   context.fillText(text, options.width / 2, options.height / 4);
+
+  if (options.title) {
+    context.font = `bold ${options.titleSize} sans-serif`;
+    context.fillText(options.title, options.width / 2, options.height / 6);
+  }
 
   return canvas.toBuffer("image/png");
 };
