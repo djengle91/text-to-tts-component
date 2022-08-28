@@ -3,7 +3,7 @@ const { createCanvas } = require("canvas");
 
 const app = express();
 
-app.listen(3000);
+app.listen(process.env.PORT || 8080);
 
 app.get("/", (req, res) => {
   // use URL encoding for spaces, new lines, and & symbol
