@@ -8,7 +8,7 @@ https://text-to-tts-component.herokuapp.com?text=Attack%20enemy%20character%0Afo
 | **query param**    | **usage**                                                                                                                              | **default** |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------|-------------|
 | **t \| text**      | use URL encoding for new lines, "&", "#", "%", etc..., shouldn't need to for spaces, but you can just to be safe<br>%0A = new line, %26 = &, %23 = #, %25 = %, %20 = space                                            | ""          |
-| **w \| width**     | size is in mm then multiplied by 4 to get approximate size in pixels<br>default size is 63.5mm x 88mm, which is the standard card size | 63.5        |
+| **w \| width**     | size is in mm then multiplied by 8 for better resolution<br>default size is 63.5mm x 88mm, which is the standard card size | 63.5        |
 | **h \| height**    | same as width                                                                                                                          | 88          |
 | **c \| textColor** | can be any string useable on color css                                                                                                 | black       |
 | **b \| bgColor**   | same as text color                                                                                                                     | white       |
