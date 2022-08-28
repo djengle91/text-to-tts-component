@@ -2,7 +2,7 @@
 Generates a png for use with Tabletop Simulator custom components. Put `https://text-to-tts-component.herokuapp.com` in the url field for any component image on Tabletop Simulator along with the appropriate query params. This is intended for very early prototypes specifically, so the components are going to be single color backgrounds with single color text in a single font size. Nothing pretty.
 
 #### Example
-https://text-to-tts-component.herokuapp.com?text=Attack%20enemy%20character%0Afor%2020%20damage.&width=44.5&height=68&bgColor=%23222A68&textColor=%23F2F5FF&fontSize=12px&title=Attack&titleSize=16px
+https://text-to-tts-component.herokuapp.com/?text=Attack%20enemy%20character%0Afor%2020%20damage.&width=44.5&height=68&bgColor=%23222A68&textColor=%23F2F5FF&fontSize=24px&title=Attack&titleSize=32px
 
 #### Query Params
 | **query param**    | **usage**                                                                                                                              | **default** |
