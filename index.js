@@ -19,12 +19,14 @@ app.get("/", (req, res) => {
     textColor: req.query.c || req.query.textColor || "black",
     // can be any string useable on color css
     bgColor: req.query.bc || req.query.bgColor || "white",
-    // can use any string useable on font-size css
-    fontSize: req.query.f || req.query.fontSize || "32px",
+    // in pixels
+    fontSize: req.query.f || req.query.fontSize || "32",
     // will be put above regular text and bolded
     title: req.query.t || req.query.title || "",
-    // can use any string useable on font-size css
-    titleSize: req.query.ts || req.query.titleSize || "40px",
+    // in pixels
+    titleSize: req.query.ts || req.query.titleSize || "40",
+    // left | right | center
+    alignment: req.query.a || req.query.alignment || "center",
   };
 
   res.writeHead(200, {
@@ -42,14 +44,55 @@ const generateComponent = (text, options) => {
   context.fillRect(0, 0, options.width, options.height);
 
   context.fillStyle = options.textColor;
-  context.font = `${options.fontSize} sans-serif`;
-  context.textAlign = "center";
-  context.fillText(text, options.width / 2, options.height / 4);
+  context.font = `${options.fontSize}px sans-serif`;
+  context.textAlign = options.alignment;
+  let textXPosition = options.width / 2;
+
+  if (options.alignment === "left") {
+    textXPosition = 20;
+  } else if (options.alignment === "right") {
+    textXPosition = options.width - 20;
+  }
+
+  wrapText(
+    context,
+    text,
+    textXPosition,
+    options.height / 4,
+    options.width - 40,
+    options.fontSize * 1.5
+  );
 
   if (options.title) {
-    context.font = `bold ${options.titleSize} sans-serif`;
-    context.fillText(options.title, options.width / 2, options.height / 6);
+    context.font = `bold ${options.titleSize}px sans-serif`;
+    wrapText(
+      context,
+      title,
+      textXPosition,
+      options.height / 6,
+      options.width - 40,
+      options.titleSize * 1.5
+    );
   }
 
   return canvas.toBuffer("image/png");
+};
+
+const wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
+  const words = text.split(" ");
+  let line = "";
+  for (const [index, w] of words.entries()) {
+    const testLine = line + w + " ";
+    const metrics = ctx.measureText(testLine);
+    const testWidth = metrics.width;
+    if (testWidth > maxWidth && index > 0) {
+      console.log(line);
+      ctx.fillText(line, x, y);
+      line = w + " ";
+      y += lineHeight;
+    } else {
+      line = testLine;
+    }
+  }
+  ctx.fillText(line, x, y);
 };
