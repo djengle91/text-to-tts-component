@@ -3,6 +3,8 @@ Generates a png for use with Tabletop Simulator custom components.This is intend
 
 Put `https://text-to-tts-component.herokuapp.com` in the url field for any component image on Tabletop Simulator along with the appropriate query params. You can also visit the link in your browser and then right click and save the image. If the server crashes, the URL may cause errors in Tabletop Simulator, but if you save the generated image locally, obviously that won't be an issue.
 
+You can also use the site https://crobi.github.io/rpg-cards/generator/generate.html for a little better quality card prototypes with a little more control over design. It is not my site, but I find it to be quite useful for prototyping. Using google sheets or excel is another decent option. For both of these options you will generally need to either screenshot (may need to zoom in so TTS component isn't blurry) or use an image editor to cut out a single card properly.
+
 #### Example
 https://text-to-tts-component.herokuapp.com/?text=Attack%20enemy%20character%0Afor%2020%20damage.&width=44.5&height=68&bgColor=%23222A68&textColor=%23F2F5FF&fontSize=24px&title=Attack&titleSize=32px
 
