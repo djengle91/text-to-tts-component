@@ -17,4 +17,4 @@ https://text-to-tts-component.herokuapp.com/?text=Attack%20enemy%20character%0Af
 | **f \| fontSize**  | can use any string useable on font-size css                                                                                            | 16px        |
 | **t \| title**  | will be put above regular text and bolded                                                                                          | ""        |
 | **ts \| titleSize**  | can use any string useable on font-size css                                                                                            | 20px        |
-| ** a \| alignment** | alignment for the regular text, center, left, or right | center |
+| **a \| alignment** | alignment for the regular text, center, left, or right | center |
